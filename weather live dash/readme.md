@@ -95,3 +95,11 @@ External Weather APIs (OpenWeather, OpenStreetMap)
 
 > 🚧 Add your real UI screenshots here once finalized!
 
+##  👨‍💻 Developer
+### Hassaan Shahid
+> Full-Stack Developer | Data Analytics | AI
+📍 Pakistan
+
+- 📧 Email: shahidhassaan17@gmail.com
+- 🔗 LinkedIn: LinkedIn[www.linkedin.com/in/hassaanshahid217]
+
