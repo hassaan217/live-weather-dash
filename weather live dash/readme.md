@@ -62,4 +62,36 @@ FastAPI Backend (Data Processing + Validation)
 MongoDB Atlas (Weather Logs & Analytics Cache)
         ⬇️
 External Weather APIs (OpenWeather, OpenStreetMap)
+```
+
+
+
+## 🔐 Security Considerations
+
+- ✅ API key protection  
+- ✅ Input validation  
+- ✅ HTTPS enforced  
+- ✅ Local storage data handling  
+- ✅ Future rate limiting on backend  
+
+## ✅ Core User Journeys
+
+- ✔ Travelers checking destination weather  
+- ✔ Farmers planning agricultural tasks  
+- ✔ Businesses scheduling outdoor events  
+- ✔ Researchers studying climate patterns  
+- ✔ Students interested in weather analytics  
+
+## 🛣️ Roadmap
+
+| Phase                              | Status           | Scope                              |
+|------------------------------------|------------------|------------------------------------|
+| Phase 1 – UI + API Integration     | ✅ Completed     | Map, charts, real-time weather     |
+| Phase 2 – Data Analytics Upgrade   | 🔄 In Progress   | Export, insights, comparison view  |
+| Phase 3 – AI + Prediction Models   | ⏳ Upcoming      | ML weather prediction              |
+| Phase 4 – Enterprise & IoT Support | 🔮 Future        | Smart device integration           |
+
+## 📸 Screenshots
+
+> 🚧 Add your real UI screenshots here once finalized!
 
