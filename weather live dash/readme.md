@@ -100,6 +100,6 @@ External Weather APIs (OpenWeather, OpenStreetMap)
 > Full-Stack Developer | Data Analytics | AI
 📍 Pakistan
 
-- 📧 Email: shahidhassaan17@gmail.com
-- 🔗 LinkedIn: LinkedIn[www.linkedin.com/in/hassaanshahid217]
+- 📧 Email: [hassan's email](shahidhassaan17@gmail.com)
+- 🔗 LinkedIn: [LinkedIn](https://www.linkedin.com/in/hassaanshahid217)
 
