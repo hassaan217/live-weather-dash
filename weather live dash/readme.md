@@ -93,7 +93,7 @@ External Weather APIs (OpenWeather, OpenStreetMap)
 
 ## 📸 Screenshots
 
-![Live Weather Dashboard](live-weather-dash.png)
+![Live Weather Dashboard](live%20weather%20dash.png)
 
 ##  👨‍💻 Developer
 ### Hassaan Shahid
