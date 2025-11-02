@@ -9,7 +9,9 @@ app = FastAPI(title="Weather Insight Dashboard API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://your-frontend-name.vercel.app"],
+    allow_origins=["http://localhost:5173",
+    "https://live-weather-dash.vercel.app",
+    "https://weather-live-dashboard.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
