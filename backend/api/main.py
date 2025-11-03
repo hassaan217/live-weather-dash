@@ -13,17 +13,29 @@ from app.db.database import connect_to_mongo, close_mongo_connection
 # Initialize FastAPI app
 app = FastAPI(title="Weather Insight Dashboard API")
 
-# Configure CORS for both local and production
+# Configure CORS properly
+origins = [
+    "https://weather-live-dashboard.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",  # Add common dev ports
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://weather-live-dashboard.vercel.app",
-        "http://localhost:5173"
-    ],
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
+
+# Alternative: If you need to allow all origins during development
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],  # Use this temporarily for testing
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 # Database connection events
 @app.on_event("startup")
@@ -41,3 +53,8 @@ app.include_router(weather.router, prefix="/api", tags=["weather"])
 @app.get("/")
 def read_root():
     return {"message": "✅ Weather Insight Dashboard API is running successfully!"}
+
+# Health check endpoint
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
