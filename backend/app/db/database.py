@@ -1,33 +1,40 @@
 # app/db/database.py
+
 import os
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MONGODB_URI = os.getenv("MONGODB_URI")
+MONGO_URI = os.getenv("MONGO_URI")
 
-# MongoDB client
 client = None
+db = None
 
-async def connect_to_mongo():
-    """Connect to MongoDB."""
-    global client
-    if client is None:
-        client = MongoClient(MONGODB_URI)
-        # Test the connection
-        client.admin.command('ping')
-        print("Connected to MongoDB!")
+def connect_to_mongo():
+    """Connect to MongoDB (safe for Vercel serverless)."""
+    global client, db
+    try:
+        if not MONGO_URI:
+            print("⚠️  MONGO_URI not set — skipping MongoDB connection.")
+            return
+        client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        db = client["weather"]
+        client.admin.command("ping")  # verify connection
+        print("✅ Connected to MongoDB successfully.")
+    except Exception as e:
+        print(f"❌ Failed to connect to MongoDB: {e}")
 
-async def close_mongo_connection():
+def close_mongo_connection():
     """Close MongoDB connection."""
     global client
-    if client is not None:
+    if client:
         client.close()
-        print("MongoDB connection closed.")
+        print("🔒 MongoDB connection closed.")
 
 def get_db():
-    """Get MongoDB database."""
-    if client is None:
-        raise Exception("MongoDB client not initialized")
-    return client["weather"]
+    """Get active database instance."""
+    global db
+    if db is None:
+        raise Exception("MongoDB not connected")
+    return db
