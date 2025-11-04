@@ -1,7 +1,7 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_BASE_URL = 'https://live-weather-dash-backend.vercel.app/api';
+const API_BASE_URL = 'https://weather-live-dashboard-backend.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
